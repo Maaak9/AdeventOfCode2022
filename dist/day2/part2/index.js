@@ -42,7 +42,8 @@ var getShapeValue = function (a) {
         return 1;
     if (a === paper)
         return 2;
-    return 3;
+    if (a === scissor)
+        return 3;
 };
 var calcScore = function (a, b) {
     // draw

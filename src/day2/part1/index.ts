@@ -22,7 +22,7 @@ const decryptedStrategy = decryptedPuzzleData
 const getShapeValue = (a: Shape) => {
   if (a === rock) return 1;
   if (a === paper) return 2;
-  return 3;
+  if (a === scissor) return 3;
 }
 
 const calcScore = (a: Shape, b: Shape) => {
