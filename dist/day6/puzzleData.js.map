@@ -1,1 +1,1 @@
-{"version":3,"file":"puzzleData.js","sourceRoot":"","sources":["../../src/day6/puzzleData.ts"],"names":[],"mappings":";;AAAA,IAAM,UAAU,GAAG,igIAAigI,CAAC;AAErhI,qBAAe,UAAU,CAAC"}
+{"version":3,"file":"puzzleData.js","sourceRoot":"","sources":["../../src/day6/puzzleData.ts"],"names":[],"mappings":";;AAAA,MAAM,UAAU,GAAG,igIAAigI,CAAC;AAErhI,kBAAe,UAAU,CAAC"}

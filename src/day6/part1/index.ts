@@ -4,9 +4,7 @@ const dataStream = puzzleData.split('');
 
 for (let i = 4; i <= dataStream.length; i++) {
   const sequence = dataStream.slice(i - 4, i);
-  const uniqueSequence = sequence.filter((item, pos, self) => {
-    return self.indexOf(item) == pos;
-  })
+  const uniqueSequence = [...new Set(sequence)]
 
   if (uniqueSequence.length === 4) {
     console.log('uniqueSequence', uniqueSequence);
