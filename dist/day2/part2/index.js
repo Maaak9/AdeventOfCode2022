@@ -2,19 +2,19 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const puzzleData_1 = __importDefault(require("../puzzleData"));
-const rock = "rock";
-const paper = "paper";
-const scissor = "scissor";
-const decryptedPuzzleData = puzzleData_1.default
+exports.__esModule = true;
+var puzzleData_1 = __importDefault(require("../puzzleData"));
+var rock = "rock";
+var paper = "paper";
+var scissor = "scissor";
+var decryptedPuzzleData = puzzleData_1["default"]
     .replaceAll("A", rock)
     .replaceAll("B", paper)
     .replaceAll("C", scissor);
-const decryptedStrategy = decryptedPuzzleData
+var decryptedStrategy = decryptedPuzzleData
     .split("\n")
-    .map((round) => {
-    const [a, b] = round.split(" ");
+    .map(function (round) {
+    var _a = round.split(" "), a = _a[0], b = _a[1];
     // lose
     if (b === "X") {
         if (a === rock)
@@ -37,7 +37,7 @@ const decryptedStrategy = decryptedPuzzleData
             return [a, rock];
     }
 });
-const getShapeValue = (a) => {
+var getShapeValue = function (a) {
     if (a === rock)
         return 1;
     if (a === paper)
@@ -45,7 +45,7 @@ const getShapeValue = (a) => {
     if (a === scissor)
         return 3;
 };
-const calcScore = (a, b) => {
+var calcScore = function (a, b) {
     // draw
     if (a === b) {
         return 3 + getShapeValue(b);
@@ -61,7 +61,7 @@ const calcScore = (a, b) => {
         return 0 + getShapeValue(b);
     }
 };
-const calculatedOutcomes = decryptedStrategy.map((round) => calcScore(round[0], round[1]));
-const sumOfOutcomes = calculatedOutcomes.reduce((acc, x) => acc += x, 0);
+var calculatedOutcomes = decryptedStrategy.map(function (round) { return calcScore(round[0], round[1]); });
+var sumOfOutcomes = calculatedOutcomes.reduce(function (acc, x) { return acc += x; }, 0);
 console.log('sumOfOutcomes', sumOfOutcomes);
 //# sourceMappingURL=index.js.map

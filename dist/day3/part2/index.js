@@ -2,31 +2,31 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const puzzleData_1 = __importDefault(require("../puzzleData"));
-const puzzleDataSplitGroups = puzzleData_1.default.match(/(?:.+\n?){3}/g);
-const groups = puzzleDataSplitGroups.map((group) => group
+exports.__esModule = true;
+var puzzleData_1 = __importDefault(require("../puzzleData"));
+var puzzleDataSplitGroups = puzzleData_1["default"].match(/(?:.+\n?){3}/g);
+var groups = puzzleDataSplitGroups.map(function (group) { return group
     .split('\n')
     .slice(0, 3)
-    .map((member) => member));
-const matchingItems = groups.map((group) => {
-    const [m1, m2, m3] = group;
-    let duplicatedItems = [];
-    m1.split('').forEach((item) => {
+    .map(function (member) { return member; }); });
+var matchingItems = groups.map(function (group) {
+    var m1 = group[0], m2 = group[1], m3 = group[2];
+    var duplicatedItems = [];
+    m1.split('').forEach(function (item) {
         if (m2.includes(item) && !duplicatedItems.includes(item)) {
             duplicatedItems.push(item);
         }
     });
-    duplicatedItems = duplicatedItems.filter((item) => m3.includes(item));
+    duplicatedItems = duplicatedItems.filter(function (item) { return m3.includes(item); });
     return duplicatedItems;
 });
-const isUpperCase = (a) => {
+var isUpperCase = function (a) {
     if (a === a.toLocaleUpperCase())
         return true;
     return false;
 };
-let sumOfItems = 0;
-matchingItems.forEach((item) => {
+var sumOfItems = 0;
+matchingItems.forEach(function (item) {
     if (isUpperCase(item[0])) {
         sumOfItems += item[0].charCodeAt() - 38;
     }

@@ -2,30 +2,30 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const puzzleData_1 = __importDefault(require("../puzzleData"));
-const backpacks = puzzleData_1.default.split('\n')
-    .map((row) => [
+exports.__esModule = true;
+var puzzleData_1 = __importDefault(require("../puzzleData"));
+var backpacks = puzzleData_1["default"].split('\n')
+    .map(function (row) { return [
     row.slice(0, row.length / 2),
     row.slice(row.length / 2, row.length)
-]);
-const matchingItems = backpacks.map((bag) => {
-    const [bagPart1, bagPart2] = bag;
-    const sameItems = [];
-    bagPart1.split('').forEach((item) => {
+]; });
+var matchingItems = backpacks.map(function (bag) {
+    var bagPart1 = bag[0], bagPart2 = bag[1];
+    var sameItems = [];
+    bagPart1.split('').forEach(function (item) {
         if (bagPart2.includes(item) && !sameItems.includes(item)) {
             sameItems.push(item);
         }
     });
     return sameItems;
 });
-const isUpperCase = (a) => {
+var isUpperCase = function (a) {
     if (a === a.toLocaleUpperCase())
         return true;
     return false;
 };
-let sumOfItems = 0;
-matchingItems.forEach((item) => {
+var sumOfItems = 0;
+matchingItems.forEach(function (item) {
     if (isUpperCase(item[0])) {
         sumOfItems += item[0].charCodeAt() - 38;
     }
